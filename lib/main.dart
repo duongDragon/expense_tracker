@@ -13,63 +13,57 @@ var kDarkColorCheme = ColorScheme.fromSeed(
 );
 
 void main() {
-  //  require make sure that locking the orientation and then runninng the app works as intended
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]).then(
-    (fn) => runApp(
-      MaterialApp(
-        // theme: ThemeData(useMaterial3: true), // use Material3 look
-        darkTheme: ThemeData.dark().copyWith(
-          useMaterial3: true,
-          colorScheme: kDarkColorCheme,
-          cardTheme: const CardTheme().copyWith(
-            color: kDarkColorCheme.secondaryContainer,
-            margin: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-          ),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: kDarkColorCheme.primaryContainer,
-              foregroundColor: kDarkColorCheme.onPrimaryContainer,
-            ),
+  runApp(
+    MaterialApp(
+      // theme: ThemeData(useMaterial3: true), // use Material3 look
+      darkTheme: ThemeData.dark().copyWith(
+        useMaterial3: true,
+        colorScheme: kDarkColorCheme,
+        cardTheme: const CardTheme().copyWith(
+          color: kDarkColorCheme.secondaryContainer,
+          margin: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
           ),
         ),
-        theme: ThemeData().copyWith(
-          // scaffoldBackgroundColor:
-          // elevatedButtonTheme: ElevatedButtonThemeData()),
-          useMaterial3: true,
-          colorScheme: kColorScheme,
-          appBarTheme: const AppBarTheme().copyWith(
-            backgroundColor: kColorScheme.onPrimaryContainer,
-            foregroundColor: kColorScheme.primaryContainer,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kDarkColorCheme.primaryContainer,
+            foregroundColor: kDarkColorCheme.onPrimaryContainer,
           ),
-          cardTheme: const CardTheme().copyWith(
-            color: kColorScheme.secondaryContainer,
-            margin: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-          ),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: kColorScheme.primaryContainer,
-            ),
-          ),
-          textTheme: ThemeData().textTheme.copyWith(
-                titleLarge: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: kColorScheme.onSecondaryContainer,
-                  fontSize: 16,
-                ),
-              ),
         ),
-        // themeMode: ThemeMode.system,  // default
-        home: const Expenses(),
       ),
+      theme: ThemeData().copyWith(
+        // scaffoldBackgroundColor:
+        // elevatedButtonTheme: ElevatedButtonThemeData()),
+        useMaterial3: true,
+        colorScheme: kColorScheme,
+        appBarTheme: const AppBarTheme().copyWith(
+          backgroundColor: kColorScheme.onPrimaryContainer,
+          foregroundColor: kColorScheme.primaryContainer,
+        ),
+        cardTheme: const CardTheme().copyWith(
+          color: kColorScheme.secondaryContainer,
+          margin: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 8,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kColorScheme.primaryContainer,
+          ),
+        ),
+        textTheme: ThemeData().textTheme.copyWith(
+              titleLarge: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: kColorScheme.onSecondaryContainer,
+                fontSize: 16,
+              ),
+            ),
+      ),
+      // themeMode: ThemeMode.system,  // default
+      home: const Expenses(),
     ),
   );
 }
