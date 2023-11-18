@@ -90,6 +90,7 @@ class _ExpensesState extends State<Expenses> {
 
     return Scaffold(
         appBar: AppBar(
+          // centerTitle: false, // Ddaptive Widget IOS auto Center and Adroid Left
           title: const Text('Flutter expenseTracker'),
           actions: [
             IconButton(
